@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools==75.8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegisos"
+version = "0.1.0"
+description = "Evidence-driven AI software change platform"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.115.12", "uvicorn[standard]==0.34.0", "pydantic==2.10.6",
+  "pydantic-settings==2.7.1", "SQLAlchemy==2.0.38", "alembic==1.14.1",
+  "psycopg[binary]==3.2.5", "PyJWT==2.10.1",
+  "httpx==0.28.1", "email-validator==2.2.0", "openai==1.65.4", "redis==5.2.1", "python-multipart==0.0.20"
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4", "pytest-cov==6.0.0", "ruff==0.9.7"]
+
+[tool.setuptools.packages.find]
+where = ["backend"]
+
+[tool.pytest.ini_options]
+pythonpath = ["backend"]
+testpaths = ["backend/tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100

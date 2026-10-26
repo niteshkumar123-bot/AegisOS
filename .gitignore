@@ -1,0 +1,26 @@
+.env
+.env.*
+!.env.example
+!.env.sample
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+dist/
+coverage/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+workspaces/
+
+# Local agent settings and temporary repair files
+.agents/
+.claude/
+*.bak
+*.tsbuildinfo
+*.egg-info/
+APPLY_*.txt
+apply_*_fix.py
